@@ -1434,7 +1434,7 @@ class Validate
      */
     public function dateFormat($value, $rule): bool
     {
-        $info = date_parse_from_format($rule, $value);
+        $info = date_parse_from_format($rule, (string) $value);
         if (strlen((string) $info['year']) != 4 && strpos($rule, 'Y') !== false) {
             return false;
         }
